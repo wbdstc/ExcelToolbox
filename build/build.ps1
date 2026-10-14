@@ -41,9 +41,9 @@ if (-not (Test-Path $RibbonXml)) {
     exit 1
 }
 
-$vbaFiles = Get-ChildItem -Path $SrcDir -Recurse -Include *.bas, *.cls
+$vbaFiles = Get-ChildItem -Path $SrcDir -Recurse -Include *.bas, *.cls, *.frm
 if ($vbaFiles.Count -eq 0) {
-    Write-Error "源码目录中未找到任何 VBA 模块文件 (.bas / .cls)！"
+    Write-Error "源码目录中未找到任何 VBA 模块文件 (.bas / .cls / .frm)！"
     exit 1
 }
 

@@ -8,27 +8,42 @@
         <group id="grpExport" label="批处理工具">
           <splitButton id="splitExportPdf" size="large">
             <button id="btnExportPdf"
-                    label="批量导出PDF"
+                    label="导出为 PDF"
                     imageMso="FileSaveAsPdfOrXps"
                     onAction="OnRibbonAction"
                     tag="ExportPdf"
-                    screentip="批量导出PDF"
-                    supertip="点击弹出选择框，可选择合并导出为一个PDF或分别导出为独立PDF文件。" />
+                    screentip="导出为 PDF"
+                    supertip="打开 PDF 导出面板，支持选择导出指定工作表、当前工作表、合并导出或分别导出独立 PDF。" />
             <menu id="mnuExportPdf">
+              <button id="btnExportSinglePdf"
+                      label="导出指定工作表为 PDF..."
+                      imageMso="FileSaveAsPdfOrXps"
+                      onAction="OnRibbonAction"
+                      tag="ExportPdfSingle"
+                      screentip="导出指定工作表为 PDF"
+                      supertip="从工作簿中自由选择具体某一个工作表导出为独立的 PDF 文件。" />
+              <button id="btnExportActivePdf"
+                      label="导出当前工作表为 PDF"
+                      imageMso="FileSaveAsPdfOrXps"
+                      onAction="OnRibbonAction"
+                      tag="ExportPdfActive"
+                      screentip="导出当前工作表为 PDF"
+                      supertip="直接将当前活动的工作表快速导出为独立的 PDF 文件。" />
+              <menuSeparator id="sepExportPdf" />
               <button id="btnExportMergedPdf"
-                      label="合并导出为单个 PDF"
+                      label="合并所有可见 Sheet 导出为单个 PDF"
                       imageMso="FileSaveAsPdfOrXps"
                       onAction="OnRibbonAction"
                       tag="ExportPdfMerged"
-                      screentip="合并导出为单个 PDF"
-                      supertip="将当前工作簿中所有可见工作表合并导出为一个完整的PDF文件。" />
+                      screentip="合并所有可见工作表为单个 PDF"
+                      supertip="将当前工作簿中所有可见工作表合并导出为一个完整的 PDF 文件。" />
               <button id="btnExportSeparatePdf"
-                      label="各 Sheet 分别导出 PDF"
+                      label="各可见 Sheet 分别导出为独立 PDF"
                       imageMso="FileSaveAsPdfOrXps"
                       onAction="OnRibbonAction"
                       tag="ExportPdfSeparate"
-                      screentip="各 Sheet 分别导出 PDF"
-                      supertip="将当前工作簿中每个可见工作表分别导出为独立的PDF文件。" />
+                      screentip="各可见工作表分别导出为独立 PDF"
+                      supertip="将当前工作簿中每个可见工作表分别导出为独立的 PDF 文件。" />
             </menu>
           </splitButton>
         </group>

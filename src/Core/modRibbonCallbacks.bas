@@ -27,6 +27,12 @@ Public Sub OnRibbonAction(ByVal control As IRibbonControl)
         Case "ExportPdf"
             modExportPdf.ExportMultiSheetsToPdf
             
+        Case "ExportPdfSingle"
+            modExportPdf.ShowExportSingleSheetDialog
+            
+        Case "ExportPdfActive"
+            modExportPdf.ExportActiveSheetToPdf
+            
         Case "ExportPdfMerged"
             modExportPdf.ExportSheetsToMergedPdf
             
@@ -34,9 +40,9 @@ Public Sub OnRibbonAction(ByVal control As IRibbonControl)
             modExportPdf.ExportSheetsToSeparatePdfs
             
         Case "About"
-            MsgBox "【ExcelToolbox】 Excel 效率工具箱 v1.0.0" & vbCrLf & vbCrLf & _
+            MsgBox "【ExcelToolbox】 Excel 效率工具箱 v1.1.0" & vbCrLf & vbCrLf & _
                    "主要功能：" & vbCrLf & _
-                   "  1. 批量导出 PDF（支持合并导出与各 Sheet 独立导出）" & vbCrLf & _
+                   "  1. 导出 PDF（支持指定 Sheet 导出、当前表导出、全表合并或独立导出）" & vbCrLf & _
                    "  2. 十字聚光灯行列高亮" & vbCrLf & _
                    "  3. 双击单元格快速/切换打勾" & vbCrLf & vbCrLf & _
                    "作者: 开发者", _

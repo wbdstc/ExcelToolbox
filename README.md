@@ -15,7 +15,9 @@ ExcelToolbox/
 │   │   ├── clsAppEvents.cls     # 全局 Application 级别事件捕获（监听双击、选择变动）
 │   │   └── modRibbonCallbacks.bas # 功能区按钮点击回调调度器
 │   └── Features/                # 业务功能模块（每个小功能一个独立文件）
-│       ├── modExportPdf.bas     # 功能1：多 Sheet 批量导出 PDF
+│       ├── frmExportPdf.frm     # 功能1交互窗体：工作表选择与导出模式面板
+│       ├── frmExportPdf.frx     # 窗体二进制资源文件
+│       ├── modExportPdf.bas     # 功能1：PDF 导出逻辑（单表/合并/独立导出）
 │       ├── modCrosshair.bas     # 功能2：十字聚光灯行列高亮
 │       └── modDoubleClick.bas   # 功能3：双击填充“√”
 ├── build/                       # 打包生成物与构建脚本目录
@@ -30,9 +32,12 @@ ExcelToolbox/
 
 ## 功能特性
 
-1. **批量导出 PDF (`modExportPdf.bas`)**:
-   - 一键将当前工作簿中的所有可见工作表分别导出为独立的 PDF 文件。
-   - 自动过滤文件名中的非法字符，支持自定义保存目录。
+1. **导出为 PDF (`modExportPdf.bas` + `frmExportPdf.frm`)**:
+   - **选择导出指定工作表**：提供交互界面下拉选择任意指定工作表导出为独立 PDF，默认预选当前活动工作表。
+   - **一键导出当前活动表**：支持直接将正在编辑/查看的工作表快速导出为 PDF。
+   - **全表合并导出**：将所有可见工作表按顺序合并导出为一个完整的 PDF 文件。
+   - **全表分别导出**：将所有可见工作表分别导出为独立的 PDF 文件，支持自定义保存目录。
+   - **贴心细节体验**：支持导出后自动打开 PDF、自动过滤文件名非法字符、隐藏表防误触提示与状态还原。
 
 2. **十字聚光灯 (`modCrosshair.bas`)**:
    - 动态高亮显示当前选中单元格所在的行和列，便于在大表格中快速定位与核对数据。
